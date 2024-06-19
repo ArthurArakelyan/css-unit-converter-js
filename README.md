@@ -152,6 +152,10 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | mmToPc    | mm                                |
 | mmToCm    | mm                                |
 
+## Communities
+
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/cssunitconverter/)
+
 ## Contributing
 
 Got ideas or bug reports? Open an issue or send a pull request!
