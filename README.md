@@ -1,5 +1,7 @@
 # css-unit-converter-js
 
+[![NPM Monthly Downloads](https://img.shields.io/npm/dm/css-unit-converter-js?label=montly%20downloads)](https://img.shields.io/npm/dw/css-unit-converter-js)
+[![NPM Total Downloads](https://img.shields.io/npm/dt/css-unit-converter-js?label=total%20downloads)](https://img.shields.io/npm/dw/css-unit-converter-js)
 [![NPM version](https://img.shields.io/npm/v/css-unit-converter-js)](https://www.npmjs.com/package/css-unit-converter-js)
 [![GitHub code size in bytes](https://img.shields.io/bundlephobia/min/css-unit-converter-js?style=flat)](https://www.npmjs.com/package/css-unit-converter-js)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/ArthurArakelyan/css-unit-converter-js/blob/main/LICENSE)
@@ -67,6 +69,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | pxToIn    | px                                |
 | pxToPc    | px                                |
 | pxToCm    | px                                |
+| pxToMm    | px                                |
 | remToPx   | rem, remSize                      |
 | remToEm   | rem, remSize, emSize              |
 | remToVw   | rem, remSize, viewportWidth       |
@@ -75,6 +78,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | remToIn   | rem, remSize                      |
 | remToPc   | rem, remSize                      |
 | remToCm   | rem, remSize                      |
+| remToMm   | rem, remSize                      |
 | emToPx    | em, emSize                        |
 | emToRem   | em, emSize, remSize               |
 | emToVw    | em, emSize, viewportWidth         |
@@ -83,6 +87,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | emToIn    | em, emSize                        |
 | emToPc    | em, emSize                        |
 | emToCm    | em, emSize                        |
+| emToMm    | em, emSize                        |
 | vwToPx    | vw, viewportWidth                 |
 | vwToRem   | vw, viewportWidth, remSize        |
 | vwToEm    | vw, viewportWidth, emSize         |
@@ -91,6 +96,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | vwToIn    | vw, viewportWidth                 |
 | vwToPc    | vw, viewportWidth                 |
 | vwToCm    | vw, viewportWidth                 |
+| vwToMm    | vw, viewportWidth                 |
 | vhToPx    | vh, viewportHeight                |
 | vhToRem   | vh, viewportHeight, remSize       |
 | vhToEm    | vh, viewportHeight, emSize        |
@@ -99,6 +105,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | vhToIn    | vh, viewportHeight                |
 | vhToPc    | vh, viewportHeight                |
 | vhToCm    | vh, viewportHeight                |
+| vhToMm    | vh, viewportHeight                |
 | ptToPx    | pt                                |
 | ptToRem   | pt, remSize                       |
 | ptToEm    | pt, emSize                        |
@@ -107,6 +114,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | ptToIn    | pt                                |
 | ptToPc    | pt                                |
 | ptToCm    | pt                                |
+| ptToMm    | pt                                |
 | inToPx    | inch                              |
 | inToRem   | inch, remSize                     |
 | inToEm    | inch, emSize                      |
@@ -115,6 +123,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | inToPt    | inch                              |
 | inToPc    | inch                              |
 | inToCm    | inch                              |
+| inToMm    | inch                              |
 | pcToPx    | pc                                |
 | pcToRem   | pc, remSize                       |
 | pcToEm    | pc, emSize                        |
@@ -123,6 +132,7 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | pcToPt    | pc                                |
 | pcToIn    | pc                                |
 | pcToCm    | pc                                |
+| pcToMm    | pc                                |
 | cmToPx    | cm                                |
 | cmToRem   | cm, remSize                       |
 | cmToEm    | cm, emSize                        |
@@ -131,6 +141,20 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 | cmToPt    | cm                                |
 | cmToIn    | cm                                |
 | cmToPc    | cm                                |
+| cmToMm    | cm                                |
+| mmToPx    | mm                                |
+| mmToRem   | mm, remSize                       |
+| mmToEm    | mm, emSize                        |
+| mmToVw    | mm, viewportWidth                 |
+| mmToVh    | mm, viewportHeight                |
+| mmToPt    | mm                                |
+| mmToIn    | mm                                |
+| mmToPc    | mm                                |
+| mmToCm    | mm                                |
+
+## Communities
+
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/cssunitconverter/)
 
 ## Contributing
 

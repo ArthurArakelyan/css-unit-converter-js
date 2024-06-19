@@ -86,6 +86,16 @@ export const pxToCm = (px: number, options: ConverterOptions = {}): number => {
 };
 
 /**
+ * Converts **px** to **mm**
+ * @param px The number of **px** for converting to mm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const pxToMm = (px: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(px * 0.2645833333, options);
+};
+
+/**
  * Converts **rem** to **px** based on given **remSize**
  * @param rem The number of **rem** for converting to px
  * @param remSize The size of **1 rem** in pixels. By default, **16**
@@ -174,6 +184,17 @@ export const remToPc = (rem: number, remSize = 16, options: ConverterOptions = {
  */
 export const remToCm = (rem: number, remSize = 16, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((rem * remSize) * 0.0264583333, options);
+};
+
+/**
+ * Converts **rem** to **mm** based on given **remSize**
+ * @param rem The number of **rem** for converting to mm
+ * @param remSize The size of **1 rem** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const remToMm = (rem: number, remSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((rem * remSize) * 0.2645833333, options);
 };
 
 /**
@@ -268,6 +289,17 @@ export const emToCm = (em: number, emSize = 16, options: ConverterOptions = {}):
 };
 
 /**
+ * Converts **em** to **mm** based on given **emSize**
+ * @param em The number of **em** for converting to mm
+ * @param emSize The size of **1 em** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const emToMm = (em: number, emSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((em * emSize) * 0.2645833333, options);
+};
+
+/**
  * Converts **vw** to **px** based on given **viewportWidth**
  * @param vw The number of **vw** for converting to px
  * @param viewportWidth The size of viewport width in pixels
@@ -356,6 +388,17 @@ export const vwToPc = (vw: number, viewportWidth: number, options: ConverterOpti
  */
 export const vwToCm = (vw: number, viewportWidth: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((vw * viewportWidth / 100) * 0.0264583333, options);
+};
+
+/**
+ * Converts **vw** to **mm** based on given **viewportWidth**
+ * @param vw The number of **vw** for converting to mm
+ * @param viewportWidth The size of viewport width in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const vwToMm = (vw: number, viewportWidth: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((vw * viewportWidth / 100) * 0.2645833333, options);
 };
 
 /**
@@ -450,6 +493,17 @@ export const vhToCm = (vh: number, viewportHeight: number, options: ConverterOpt
 };
 
 /**
+ * Converts **vh** to **mm** based on given **viewportHeight**
+ * @param vh The number of **vh** for converting to mm
+ * @param viewportHeight The size of viewport height in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const vhToMm = (vh: number, viewportHeight: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((vh * viewportHeight / 100) * 0.2645833333, options);
+};
+
+/**
  * Converts **pt** to **px**
  * @param pt The number of **pt** for converting to px
  * @param options Conversion options object
@@ -531,6 +585,16 @@ export const ptToPc = (pt: number, options: ConverterOptions = {}): number => {
  */
 export const ptToCm = (pt: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((pt * 1.3333343412075) * 0.0264583333, options);
+};
+
+/**
+ * Converts **pt** to **mm**
+ * @param pt The number of **pt** for converting to mm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const ptToMm = (pt: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((pt * 1.3333343412075) * 0.2645833333, options);
 };
 
 /**
@@ -618,6 +682,16 @@ export const inToCm = (inch: number, options: ConverterOptions = {}): number => 
 };
 
 /**
+ * Converts **in** to **mm**
+ * @param inch The number of **in** for converting to mm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const inToMm = (inch: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((inch * 96) * 0.2645833333, options);
+};
+
+/**
  * Converts **pc** to **px**
  * @param pc The number of **pc** for converting to px
  * @param options Conversion options object
@@ -702,6 +776,16 @@ export const pcToCm = (pc: number, options: ConverterOptions = {}): number => {
 };
 
 /**
+ * Converts **pc** to **mm**
+ * @param pc The number of **pc** for converting to mm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const pcToMm = (pc: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((pc * 16) * 0.2645833333, options);
+};
+
+/**
  * Converts **cm** to **px**
  * @param cm The number of **cm** for converting to px
  * @param options Conversion options object
@@ -783,4 +867,108 @@ export const cmToIn = (cm: number, options: ConverterOptions = {}): number => {
  */
 export const cmToPc = (cm: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((cm * 37.7952755906) * 0.0625, options);
+};
+
+/**
+ * Converts **cm** to **mm**
+ * @param cm The number of **cm** for converting to mm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const cmToMm = (cm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((cm * 37.7952755906) * 0.2645833333, options);
+};
+
+/**
+ * Converts **mm** to **px**
+ * @param mm The number of **mm** for converting to px
+ * @param options Conversion options object
+ * @returns {number} A number converted to **px**
+ */
+export const mmToPx = (mm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(mm * 3.7795275591, options);
+};
+
+/**
+ * Converts **mm** to **rem** based on given **remSize**
+ * @param mm The number of **mm** for converting to rem
+ * @param remSize The size of **1 rem** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **rem**
+ */
+export const mmToRem = (mm: number, remSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) / remSize, options);
+};
+
+/**
+ * Converts **mm** to **em** based on given **emSize**
+ * @param mm The number of **mm** for converting to em
+ * @param emSize The size of **1 em** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **em**
+ */
+export const mmToEm = (mm: number, emSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) / emSize, options);
+};
+
+/**
+ * Converts **mm** to **vw** based on given **viewportWidth**
+ * @param mm The number of **mm** for converting to vw
+ * @param viewportWidth The size of viewport width in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **vw**
+ */
+export const mmToVw = (mm: number, viewportWidth: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((mm * 3.7795275591) / viewportWidth) * 100, options);
+};
+
+/**
+ * Converts **cm** to **vh** based on given **viewportHeight**
+ * @param cm The number of **cm** for converting to vh
+ * @param viewportHeight The size of viewport height in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **vh**
+ */
+export const mmToVh = (cm: number, viewportHeight: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((cm * 3.7795275591) / viewportHeight) * 100, options);
+};
+
+/**
+ * Converts **mm** to **pt**
+ * @param mm The number of **mm** for converting to pt
+ * @param options Conversion options object
+ * @returns {number} A number converted to **pt**
+ */
+export const mmToPt = (mm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) * 0.74999943307122, options);
+};
+
+/**
+ * Converts **mm** to **in**
+ * @param mm The number of **mm** for converting to in
+ * @param options Conversion options object
+ * @returns {number} A number converted to **in**
+ */
+export const mmToIn = (mm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) / 96, options);
+};
+
+/**
+ * Converts **mm** to **pc**
+ * @param mm The number of **mm** for converting to pc
+ * @param options Conversion options object
+ * @returns {number} A number converted to **pc**
+ */
+export const mmToPc = (mm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) * 0.0625, options);
+};
+
+/**
+ * Converts **mm** to **cm**
+ * @param mm The number of **mm** for converting to cm
+ * @param options Conversion options object
+ * @returns {number} A number converted to **cm**
+ */
+export const mmToCm = (mm: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((mm * 3.7795275591) * 0.0264583333, options);
 };
