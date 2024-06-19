@@ -7,6 +7,7 @@ import {
   pxToIn,
   pxToPc,
   pxToCm,
+  pxToMm,
   remToPx,
   remToEm,
   remToVw,
@@ -15,6 +16,7 @@ import {
   remToIn,
   remToPc,
   remToCm,
+  remToMm,
   emToPx,
   emToRem,
   emToVw,
@@ -23,6 +25,7 @@ import {
   emToIn,
   emToPc,
   emToCm,
+  emToMm,
   vwToPx,
   vwToRem,
   vwToEm,
@@ -31,6 +34,7 @@ import {
   vwToIn,
   vwToPc,
   vwToCm,
+  vwToMm,
   vhToPx,
   vhToRem,
   vhToEm,
@@ -39,6 +43,7 @@ import {
   vhToIn,
   vhToPc,
   vhToCm,
+  vhToMm,
   ptToPx,
   ptToRem,
   ptToEm,
@@ -47,6 +52,7 @@ import {
   ptToIn,
   ptToPc,
   ptToCm,
+  ptToMm,
   inToPx,
   inToRem,
   inToEm,
@@ -55,6 +61,7 @@ import {
   inToPt,
   inToPc,
   inToCm,
+  inToMm,
   pcToPx,
   pcToRem,
   pcToEm,
@@ -63,6 +70,7 @@ import {
   pcToPt,
   pcToIn,
   pcToCm,
+  pcToMm,
   cmToPx,
   cmToRem,
   cmToEm,
@@ -71,6 +79,16 @@ import {
   cmToPt,
   cmToIn,
   cmToPc,
+  cmToMm,
+  mmToPx,
+  mmToRem,
+  mmToEm,
+  mmToVw,
+  mmToVh,
+  mmToPt,
+  mmToIn,
+  mmToPc,
+  mmToCm,
 } from '../src/converters';
 
 describe('pxToRem', () => {
@@ -166,6 +184,17 @@ describe('pxToCm', () => {
     expect(pxToCm(0)).toBe(0);
 
     expect(pxToCm(-37.8)).toBe(-1);
+  });
+});
+
+describe('pxToMm', () => {
+  test('should convert correctly', () => {
+    expect(pxToMm(10)).toBe(2.646);
+    expect(pxToMm(3.78)).toBe(1);
+
+    expect(pxToMm(0)).toBe(0);
+
+    expect(pxToMm(-3.78)).toBe(-1);
   });
 });
 
@@ -274,6 +303,19 @@ describe('remToCm', () => {
   });
 });
 
+describe('remToMm', () => {
+  test('should convert correctly', () => {
+    expect(remToMm(3)).toBe(12.7);
+    expect(remToMm(6)).toBe(25.4);
+    expect(remToMm(4, 10)).toBe(10.583);
+
+    expect(remToMm(0)).toBe(0);
+
+    expect(remToMm(-3)).toBe(-12.7);
+    expect(remToMm(3, -16)).toBe(-12.7);
+  });
+});
+
 describe('emToPx', () => {
   test('should convert correctly', () => {
     expect(emToPx(1)).toBe(16);
@@ -376,6 +418,19 @@ describe('emToCm', () => {
 
     expect(emToCm(-3)).toBe(-1.27);
     expect(emToCm(3, -16)).toBe(-1.27);
+  });
+});
+
+describe('emToMm', () => {
+  test('should convert correctly', () => {
+    expect(emToMm(3)).toBe(12.7);
+    expect(emToMm(6)).toBe(25.4);
+    expect(emToMm(4, 10)).toBe(10.583);
+
+    expect(emToMm(0)).toBe(0);
+
+    expect(emToMm(-3)).toBe(-12.7);
+    expect(emToMm(3, -16)).toBe(-12.7);
   });
 });
 
@@ -488,6 +543,19 @@ describe('vwToCm', () => {
   });
 });
 
+describe('vwToMm', () => {
+  test('should convert correctly', () => {
+    expect(vwToMm(1, 1920)).toBe(5.08);
+    expect(vwToMm(50, 1920)).toBe(254);
+    expect(vwToMm(12, 1000)).toBe(31.75);
+
+    expect(vwToMm(0, 1920)).toBe(0);
+
+    expect(vwToMm(-1, 1920)).toBe(-5.08);
+    expect(vwToMm(1, -1920)).toBe(-5.08);
+  });
+});
+
 describe('vhToPx', () => {
   test('should convert correctly', () => {
     expect(vhToPx(1, 1000)).toBe(10);
@@ -597,6 +665,19 @@ describe('vhToCm', () => {
   });
 });
 
+describe('vhToMm', () => {
+  test('should convert correctly', () => {
+    expect(vhToMm(1, 1000)).toBe(2.646);
+    expect(vhToMm(40, 1000)).toBe(105.833);
+    expect(vhToMm(40, 1080)).toBe(114.3);
+
+    expect(vhToMm(0, 1000)).toBe(0);
+
+    expect(vhToMm(-1, 1000)).toBe(-2.646);
+    expect(vhToMm(1, -1000)).toBe(-2.646);
+  });
+});
+
 describe('ptToPx', () => {
   test('should convert correctly', () => {
     expect(ptToPx(9)).toBe(12);
@@ -690,6 +771,17 @@ describe('ptToCm', () => {
     expect(ptToCm(0)).toBe(0);
 
     expect(ptToCm(-32)).toBe(-1.129);
+  });
+});
+
+describe('ptToMm', () => {
+  test('should convert correctly', () => {
+    expect(ptToMm(32)).toBe(11.289);
+    expect(ptToMm(50)).toBe(17.639);
+
+    expect(ptToMm(0)).toBe(0);
+
+    expect(ptToMm(-32)).toBe(-11.289);
   });
 });
 
@@ -791,6 +883,17 @@ describe('inToCm', () => {
   });
 });
 
+describe('inToMm', () => {
+  test('should convert correctly', () => {
+    expect(inToMm(1)).toBe(25.4);
+    expect(inToMm(50)).toBe(1270);
+
+    expect(inToMm(0)).toBe(0);
+
+    expect(inToMm(-1)).toBe(-25.4);
+  });
+});
+
 describe('pcToPx', () => {
   test('should convert correctly', () => {
     expect(pcToPx(1)).toBe(16);
@@ -887,6 +990,17 @@ describe('pcToCm', () => {
   });
 });
 
+describe('pcToMm', () => {
+  test('should convert correctly', () => {
+    expect(pcToMm(6)).toBe(25.4);
+    expect(pcToMm(300)).toBe(1270);
+
+    expect(pcToMm(0)).toBe(0);
+
+    expect(pcToMm(-6)).toBe(-25.4);
+  });
+});
+
 describe('cmToPx', () => {
   test('should convert correctly', () => {
     expect(cmToPx(1)).toBe(37.795);
@@ -980,5 +1094,123 @@ describe('cmToPc', () => {
     expect(cmToPc(0)).toBe(0);
 
     expect(cmToPc(-2)).toBe(-4.724);
+  });
+});
+
+describe('cmToMm', () => {
+  test('should convert correctly', () => {
+    expect(cmToMm(2)).toBe(20);
+    expect(cmToMm(6.55)).toBe(65.5);
+
+    expect(cmToMm(0)).toBe(0);
+
+    expect(cmToMm(-2)).toBe(-20);
+  });
+});
+
+describe('mmToPx', () => {
+  test('should convert correctly', () => {
+    expect(mmToPx(1)).toBe(3.78);
+    expect(mmToPx(5)).toBe(18.898);
+
+    expect(mmToPx(0)).toBe(0);
+
+    expect(mmToPx(-1)).toBe(-3.78);
+  });
+});
+
+describe('mmToRem', () => {
+  test('should convert correctly', () => {
+    expect(mmToRem(1)).toBe(0.236);
+    expect(mmToRem(6, 32)).toBe(0.709);
+
+    expect(mmToRem(0)).toBe(0);
+
+    expect(mmToRem(-1)).toBe(-0.236);
+    expect(mmToRem(1, -16)).toBe(-0.236);
+  });
+});
+
+describe('mmToEm', () => {
+  test('should convert correctly', () => {
+    expect(mmToEm(1)).toBe(0.236);
+    expect(mmToEm(6, 32)).toBe(0.709);
+
+    expect(mmToEm(0)).toBe(0);
+
+    expect(mmToEm(-1)).toBe(-0.236);
+    expect(mmToEm(1, -16)).toBe(-0.236);
+  });
+});
+
+describe('mmToVw', () => {
+  const mockViewportWidth = 1920;
+
+  test('should convert correctly', () => {
+    expect(mmToVw(2, mockViewportWidth)).toBe(0.394);
+    expect(mmToVw(4, mockViewportWidth)).toBe(0.787);
+
+    expect(mmToVw(0, mockViewportWidth)).toBe(0);
+
+    expect(mmToVw(-2, mockViewportWidth)).toBe(-0.394);
+    expect(mmToVw(2, -mockViewportWidth)).toBe(-0.394);
+  });
+});
+
+describe('mmToVh', () => {
+  const mockViewportHeight = 1000;
+
+  test('should convert correctly', () => {
+    expect(mmToVh(1, mockViewportHeight)).toBe(0.378);
+    expect(mmToVh(6, mockViewportHeight)).toBe(2.268);
+
+    expect(mmToVh(0, mockViewportHeight)).toBe(0);
+
+    expect(mmToVh(-1, mockViewportHeight)).toBe(-0.378);
+    expect(mmToVh(1, -mockViewportHeight)).toBe(-0.378);
+  });
+});
+
+describe('mmToPt', () => {
+  test('should convert correctly', () => {
+    expect(mmToPt(1)).toBe(2.835);
+    expect(mmToPt(5)).toBe(14.173);
+
+    expect(mmToPt(0)).toBe(0);
+
+    expect(mmToPt(-1)).toBe(-2.835);
+  });
+});
+
+describe('mmToIn', () => {
+  test('should convert correctly', () => {
+    expect(mmToIn(4)).toBe(0.157);
+    expect(mmToIn(10)).toBe(0.394);
+
+    expect(mmToIn(0)).toBe(0);
+
+    expect(mmToIn(-4)).toBe(-0.157);
+  });
+});
+
+describe('mmToPc', () => {
+  test('should convert correctly', () => {
+    expect(mmToPc(2)).toBe(0.472);
+    expect(mmToPc(6)).toBe(1.417);
+
+    expect(mmToPc(0)).toBe(0);
+
+    expect(mmToPc(-2)).toBe(-0.472);
+  });
+});
+
+describe('mmToCm', () => {
+  test('should convert correctly', () => {
+    expect(mmToCm(2)).toBe(0.2);
+    expect(mmToCm(70)).toBe(7);
+
+    expect(mmToCm(0)).toBe(0);
+
+    expect(mmToCm(-2)).toBe(-0.2);
   });
 });
