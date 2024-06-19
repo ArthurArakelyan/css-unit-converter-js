@@ -1,5 +1,7 @@
 # css-unit-converter-js
 
+[![NPM Monthly Downloads](https://img.shields.io/npm/dm/css-unit-converter-js?label=montly%20downloads)](https://img.shields.io/npm/dw/css-unit-converter-js)
+[![NPM Total Downloads](https://img.shields.io/npm/dt/css-unit-converter-js?label=total%20downloads)](https://img.shields.io/npm/dw/css-unit-converter-js)
 [![NPM version](https://img.shields.io/npm/v/css-unit-converter-js)](https://www.npmjs.com/package/css-unit-converter-js)
 [![GitHub code size in bytes](https://img.shields.io/bundlephobia/min/css-unit-converter-js?style=flat)](https://www.npmjs.com/package/css-unit-converter-js)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/ArthurArakelyan/css-unit-converter-js/blob/main/LICENSE)
