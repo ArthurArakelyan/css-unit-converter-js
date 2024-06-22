@@ -96,6 +96,17 @@ export const pxToMm = (px: number, options: ConverterOptions = {}): number => {
 };
 
 /**
+ * Converts **px** to **percentage** based on given **base**
+ * @param px The number of **px** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const pxToPercentage = (px: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((px / base) * 100, options);
+};
+
+/**
  * Converts **rem** to **px** based on given **remSize**
  * @param rem The number of **rem** for converting to px
  * @param remSize The size of **1 rem** in pixels. By default, **16**
@@ -195,6 +206,18 @@ export const remToCm = (rem: number, remSize = 16, options: ConverterOptions = {
  */
 export const remToMm = (rem: number, remSize = 16, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((rem * remSize) * 0.2645833333, options);
+};
+
+/**
+ * Converts **rem** to **percentage** based on given **remSize** and **base**
+ * @param rem The number of **rem** for converting to percentage
+ * @param remSize The size of **1 rem** in pixels
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const remToPercentage = (rem: number, remSize: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((rem * remSize) / base) * 100, options);
 };
 
 /**
@@ -300,6 +323,18 @@ export const emToMm = (em: number, emSize = 16, options: ConverterOptions = {}):
 };
 
 /**
+ * Converts **em** to **percentage** based on given **emSize** and **base**
+ * @param em The number of **em** for converting to percentage
+ * @param emSize The size of **1 em** in pixels
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const emToPercentage = (em: number, emSize: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((em * emSize) / base) * 100, options);
+};
+
+/**
  * Converts **vw** to **px** based on given **viewportWidth**
  * @param vw The number of **vw** for converting to px
  * @param viewportWidth The size of viewport width in pixels
@@ -399,6 +434,18 @@ export const vwToCm = (vw: number, viewportWidth: number, options: ConverterOpti
  */
 export const vwToMm = (vw: number, viewportWidth: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((vw * viewportWidth / 100) * 0.2645833333, options);
+};
+
+/**
+ * Converts **vw** to **percentage** based on given **viewportWidth** and **base**
+ * @param vw The number of **vw** for converting to percentage
+ * @param viewportWidth The size of viewport width in pixels
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const vwToPercentage = (vw: number, viewportWidth: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((((vw * viewportWidth) / 100) / base) * 100, options);
 };
 
 /**
@@ -504,6 +551,18 @@ export const vhToMm = (vh: number, viewportHeight: number, options: ConverterOpt
 };
 
 /**
+ * Converts **vh** to **percentage** based on given **viewportHeight** and **base**
+ * @param vh The number of **vh** for converting to percentage
+ * @param viewportHeight The size of viewport height in pixels
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const vhToPercentage = (vh: number, viewportHeight: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((((vh * viewportHeight) / 100) / base) * 100, options);
+};
+
+/**
  * Converts **pt** to **px**
  * @param pt The number of **pt** for converting to px
  * @param options Conversion options object
@@ -595,6 +654,17 @@ export const ptToCm = (pt: number, options: ConverterOptions = {}): number => {
  */
 export const ptToMm = (pt: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((pt * 1.3333343412075) * 0.2645833333, options);
+};
+
+/**
+ * Converts **pt** to **percentage** based on given **base**
+ * @param pt The number of **pt** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const ptToPercentage = (pt: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((pt * 1.3333343412075) / base) * 100, options);
 };
 
 /**
@@ -692,6 +762,17 @@ export const inToMm = (inch: number, options: ConverterOptions = {}): number => 
 };
 
 /**
+ * Converts **inch** to **percentage** based on given **base**
+ * @param inch The number of **inch** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const inToPercentage = (inch: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((inch * 96) / base) * 100, options);
+};
+
+/**
  * Converts **pc** to **px**
  * @param pc The number of **pc** for converting to px
  * @param options Conversion options object
@@ -783,6 +864,17 @@ export const pcToCm = (pc: number, options: ConverterOptions = {}): number => {
  */
 export const pcToMm = (pc: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((pc * 16) * 0.2645833333, options);
+};
+
+/**
+ * Converts **pc** to **percentage** based on given **base**
+ * @param pc The number of **pc** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const pcToPercentage = (pc: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((pc * 16) / base) * 100, options);
 };
 
 /**
@@ -880,6 +972,17 @@ export const cmToMm = (cm: number, options: ConverterOptions = {}): number => {
 };
 
 /**
+ * Converts **cm** to **percentage** based on given **base**
+ * @param cm The number of **cm** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const cmToPercentage = (cm: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((cm * 37.7952755906) / base) * 100, options);
+};
+
+/**
  * Converts **mm** to **px**
  * @param mm The number of **mm** for converting to px
  * @param options Conversion options object
@@ -971,4 +1074,129 @@ export const mmToPc = (mm: number, options: ConverterOptions = {}): number => {
  */
 export const mmToCm = (mm: number, options: ConverterOptions = {}): number => {
   return applyOptionsOnConversion((mm * 3.7795275591) * 0.0264583333, options);
+};
+
+/**
+ * Converts **mm** to **percentage** based on given **base**
+ * @param mm The number of **mm** for converting to percentage
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **percentage**
+ */
+export const mmToPercentage = (mm: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((mm * 3.7795275591) / base) * 100, options);
+};
+
+/**
+ * Converts **percentage** to **px** based on given **base**
+ * @param percent The number of **percentage** for converting to px
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **px**
+ */
+export const percentageToPx = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((percent * base) / 100, options);
+};
+
+/**
+ * Converts **percentage** to **rem** based on given **base** and **remSize**
+ * @param percent The number of **percentage** for converting to rem
+ * @param base The size of **base** in pixels
+ * @param remSize The size of **1 rem** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **rem**
+ */
+export const percentageToRem = (percent: number, base: number, remSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) / remSize, options);
+};
+
+/**
+ * Converts **percentage** to **em** based on given **base** and **emSize**
+ * @param percent The number of **percentage** for converting to em
+ * @param base The size of **base** in pixels
+ * @param emSize The size of **1 em** in pixels. By default, **16**
+ * @param options Conversion options object
+ * @returns {number} A number converted to **em**
+ */
+export const percentageToEm = (percent: number, base: number, emSize = 16, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) / emSize, options);
+};
+
+/**
+ * Converts **percentage** to **vw** based on given **base** and **viewportWidth**
+ * @param percent The number of **percentage** for converting to vw
+ * @param base The size of **base** in pixels
+ * @param viewportWidth The size of viewport width in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **vw**
+ */
+export const percentageToVw = (percent: number, base: number, viewportWidth: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((((percent * base) / 100) / viewportWidth) * 100, options);
+};
+
+/**
+ * Converts **percentage** to **vh** based on given **base** and **viewportHeight**
+ * @param percent The number of **percentage** for converting to vh
+ * @param base The size of **base** in pixels
+ * @param viewportHeight The size of viewport height in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **vh**
+ */
+export const percentageToVh = (percent: number, base: number, viewportHeight: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion((((percent * base) / 100) / viewportHeight) * 100, options);
+};
+
+/**
+ * Converts **percentage** to **pt** based on given **base**
+ * @param percent The number of **percentage** for converting to pt
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **pt**
+ */
+export const percentageToPt = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) * 0.74999943307122, options);
+};
+
+/**
+ * Converts **percentage** to **in** based on given **base**
+ * @param percent The number of **percentage** for converting to in
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **in**
+ */
+export const percentageToIn = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) / 96, options);
+};
+
+/**
+ * Converts **percentage** to **pc** based on given **base**
+ * @param percent The number of **percentage** for converting to pc
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **pc**
+ */
+export const percentageToPc = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) * 0.0625, options);
+};
+
+/**
+ * Converts **percentage** to **cm** based on given **base**
+ * @param percent The number of **percentage** for converting to cm
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **cm**
+ */
+export const percentageToCm = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) * 0.0264583333, options);
+};
+
+/**
+ * Converts **percentage** to **mm** based on given **base**
+ * @param percent The number of **percentage** for converting to mm
+ * @param base The size of **base** in pixels
+ * @param options Conversion options object
+ * @returns {number} A number converted to **mm**
+ */
+export const percentageToMm = (percent: number, base: number, options: ConverterOptions = {}): number => {
+  return applyOptionsOnConversion(((percent * base) / 100) * 0.2645833333, options);
 };
