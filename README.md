@@ -59,98 +59,118 @@ pxToVw(23, 1920, { fraction: false }); // => 1.1979166666666667
 
 ## Converters
 
-| Converter | Arguments                         |
-|-----------|-----------------------------------|
-| pxToRem   | px, remSize                       |
-| pxToEm    | px, emSize                        |
-| pxToVw    | px, viewportWidth                 |
-| pxToVh    | px, viewportHeight                |
-| pxToPt    | px                                |
-| pxToIn    | px                                |
-| pxToPc    | px                                |
-| pxToCm    | px                                |
-| pxToMm    | px                                |
-| remToPx   | rem, remSize                      |
-| remToEm   | rem, remSize, emSize              |
-| remToVw   | rem, remSize, viewportWidth       |
-| remToVh   | rem, remSize, viewportHeight      |
-| remToPt   | rem, remSize                      |
-| remToIn   | rem, remSize                      |
-| remToPc   | rem, remSize                      |
-| remToCm   | rem, remSize                      |
-| remToMm   | rem, remSize                      |
-| emToPx    | em, emSize                        |
-| emToRem   | em, emSize, remSize               |
-| emToVw    | em, emSize, viewportWidth         |
-| emToVh    | em, emSize, viewportHeight        |
-| emToPt    | em, emSize                        |
-| emToIn    | em, emSize                        |
-| emToPc    | em, emSize                        |
-| emToCm    | em, emSize                        |
-| emToMm    | em, emSize                        |
-| vwToPx    | vw, viewportWidth                 |
-| vwToRem   | vw, viewportWidth, remSize        |
-| vwToEm    | vw, viewportWidth, emSize         |
-| vwToVh    | vw, viewportWidth, viewportHeight |
-| vwToPt    | vw, viewportWidth                 |
-| vwToIn    | vw, viewportWidth                 |
-| vwToPc    | vw, viewportWidth                 |
-| vwToCm    | vw, viewportWidth                 |
-| vwToMm    | vw, viewportWidth                 |
-| vhToPx    | vh, viewportHeight                |
-| vhToRem   | vh, viewportHeight, remSize       |
-| vhToEm    | vh, viewportHeight, emSize        |
-| vhToVw    | vh, viewportHeight, viewportWidth |
-| vhToPt    | vh, viewportHeight                |
-| vhToIn    | vh, viewportHeight                |
-| vhToPc    | vh, viewportHeight                |
-| vhToCm    | vh, viewportHeight                |
-| vhToMm    | vh, viewportHeight                |
-| ptToPx    | pt                                |
-| ptToRem   | pt, remSize                       |
-| ptToEm    | pt, emSize                        |
-| ptToVw    | pt, viewportWidth                 |
-| ptToVh    | pt, viewportHeight                |
-| ptToIn    | pt                                |
-| ptToPc    | pt                                |
-| ptToCm    | pt                                |
-| ptToMm    | pt                                |
-| inToPx    | inch                              |
-| inToRem   | inch, remSize                     |
-| inToEm    | inch, emSize                      |
-| inToVw    | inch, viewportWidth               |
-| inToVh    | inch, viewportHeight              |
-| inToPt    | inch                              |
-| inToPc    | inch                              |
-| inToCm    | inch                              |
-| inToMm    | inch                              |
-| pcToPx    | pc                                |
-| pcToRem   | pc, remSize                       |
-| pcToEm    | pc, emSize                        |
-| pcToVw    | pc, viewportWidth                 |
-| pcToVh    | pc, viewportHeight                |
-| pcToPt    | pc                                |
-| pcToIn    | pc                                |
-| pcToCm    | pc                                |
-| pcToMm    | pc                                |
-| cmToPx    | cm                                |
-| cmToRem   | cm, remSize                       |
-| cmToEm    | cm, emSize                        |
-| cmToVw    | cm, viewportWidth                 |
-| cmToVh    | cm, viewportHeight                |
-| cmToPt    | cm                                |
-| cmToIn    | cm                                |
-| cmToPc    | cm                                |
-| cmToMm    | cm                                |
-| mmToPx    | mm                                |
-| mmToRem   | mm, remSize                       |
-| mmToEm    | mm, emSize                        |
-| mmToVw    | mm, viewportWidth                 |
-| mmToVh    | mm, viewportHeight                |
-| mmToPt    | mm                                |
-| mmToIn    | mm                                |
-| mmToPc    | mm                                |
-| mmToCm    | mm                                |
+| Converter       | Arguments                         |
+|-----------------|-----------------------------------|
+| pxToRem         | px, remSize                       |
+| pxToEm          | px, emSize                        |
+| pxToVw          | px, viewportWidth                 |
+| pxToVh          | px, viewportHeight                |
+| pxToPt          | px                                |
+| pxToIn          | px                                |
+| pxToPc          | px                                |
+| pxToCm          | px                                |
+| pxToMm          | px                                |
+| pxToPercentage  | px, base                          |
+| remToPx         | rem, remSize                      |
+| remToEm         | rem, remSize, emSize              |
+| remToVw         | rem, remSize, viewportWidth       |
+| remToVh         | rem, remSize, viewportHeight      |
+| remToPt         | rem, remSize                      |
+| remToIn         | rem, remSize                      |
+| remToPc         | rem, remSize                      |
+| remToCm         | rem, remSize                      |
+| remToMm         | rem, remSize                      |
+| remToPercentage | rem, remSize, base                |
+| emToPx          | em, emSize                        |
+| emToRem         | em, emSize, remSize               |
+| emToVw          | em, emSize, viewportWidth         |
+| emToVh          | em, emSize, viewportHeight        |
+| emToPt          | em, emSize                        |
+| emToIn          | em, emSize                        |
+| emToPc          | em, emSize                        |
+| emToCm          | em, emSize                        |
+| emToMm          | em, emSize                        |
+| emToPercentage  | em, emSize, base                  |
+| vwToPx          | vw, viewportWidth                 |
+| vwToRem         | vw, viewportWidth, remSize        |
+| vwToEm          | vw, viewportWidth, emSize         |
+| vwToVh          | vw, viewportWidth, viewportHeight |
+| vwToPt          | vw, viewportWidth                 |
+| vwToIn          | vw, viewportWidth                 |
+| vwToPc          | vw, viewportWidth                 |
+| vwToCm          | vw, viewportWidth                 |
+| vwToMm          | vw, viewportWidth                 |
+| vwToPercentage  | vw, viewportWidth, base           |
+| vhToPx          | vh, viewportHeight                |
+| vhToRem         | vh, viewportHeight, remSize       |
+| vhToEm          | vh, viewportHeight, emSize        |
+| vhToVw          | vh, viewportHeight, viewportWidth |
+| vhToPt          | vh, viewportHeight                |
+| vhToIn          | vh, viewportHeight                |
+| vhToPc          | vh, viewportHeight                |
+| vhToCm          | vh, viewportHeight                |
+| vhToMm          | vh, viewportHeight                |
+| vhToPercentage  | vh, viewportHeight, base          |
+| ptToPx          | pt                                |
+| ptToRem         | pt, remSize                       |
+| ptToEm          | pt, emSize                        |
+| ptToVw          | pt, viewportWidth                 |
+| ptToVh          | pt, viewportHeight                |
+| ptToIn          | pt                                |
+| ptToPc          | pt                                |
+| ptToCm          | pt                                |
+| ptToMm          | pt                                |
+| ptToPercentage  | pt, base                          |
+| inToPx          | inch                              |
+| inToRem         | inch, remSize                     |
+| inToEm          | inch, emSize                      |
+| inToVw          | inch, viewportWidth               |
+| inToVh          | inch, viewportHeight              |
+| inToPt          | inch                              |
+| inToPc          | inch                              |
+| inToCm          | inch                              |
+| inToMm          | inch                              |
+| inToPercentage  | inch, base                        |
+| pcToPx          | pc                                |
+| pcToRem         | pc, remSize                       |
+| pcToEm          | pc, emSize                        |
+| pcToVw          | pc, viewportWidth                 |
+| pcToVh          | pc, viewportHeight                |
+| pcToPt          | pc                                |
+| pcToIn          | pc                                |
+| pcToCm          | pc                                |
+| pcToMm          | pc                                |
+| pcToPercentage  | pc, base                          |
+| cmToPx          | cm                                |
+| cmToRem         | cm, remSize                       |
+| cmToEm          | cm, emSize                        |
+| cmToVw          | cm, viewportWidth                 |
+| cmToVh          | cm, viewportHeight                |
+| cmToPt          | cm                                |
+| cmToIn          | cm                                |
+| cmToPc          | cm                                |
+| cmToMm          | cm                                |
+| cmToPercentage  | cm, base                          |
+| mmToPx          | mm                                |
+| mmToRem         | mm, remSize                       |
+| mmToEm          | mm, emSize                        |
+| mmToVw          | mm, viewportWidth                 |
+| mmToVh          | mm, viewportHeight                |
+| mmToPt          | mm                                |
+| mmToIn          | mm                                |
+| mmToPc          | mm                                |
+| mmToCm          | mm                                |
+| mmToPercentage  | mm, base                          |
+| percentageToPx  | percent, base                     |
+| percentageToRem | percent, base, remSize            |
+| percentageToEm  | percent, base, emSize             |
+| percentageToVw  | percent, base, viewportWidth      |
+| percentageToVh  | percent, base, viewportHeight     |
+| percentageToPt  | percent, base                     |
+| percentageToIn  | percent, base                     |
+| percentageToPc  | percent, base                     |
+| percentageToCm  | percent, base                     |
+| percentageToMm  | percent, base                     |
 
 ## Communities
 
