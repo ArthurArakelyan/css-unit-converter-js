@@ -8,6 +8,7 @@ import {
   pxToPc,
   pxToCm,
   pxToMm,
+  pxToPercentage,
   remToPx,
   remToEm,
   remToVw,
@@ -17,6 +18,7 @@ import {
   remToPc,
   remToCm,
   remToMm,
+  remToPercentage,
   emToPx,
   emToRem,
   emToVw,
@@ -26,6 +28,7 @@ import {
   emToPc,
   emToCm,
   emToMm,
+  emToPercentage,
   vwToPx,
   vwToRem,
   vwToEm,
@@ -35,6 +38,7 @@ import {
   vwToPc,
   vwToCm,
   vwToMm,
+  vwToPercentage,
   vhToPx,
   vhToRem,
   vhToEm,
@@ -44,6 +48,7 @@ import {
   vhToPc,
   vhToCm,
   vhToMm,
+  vhToPercentage,
   ptToPx,
   ptToRem,
   ptToEm,
@@ -53,6 +58,7 @@ import {
   ptToPc,
   ptToCm,
   ptToMm,
+  ptToPercentage,
   inToPx,
   inToRem,
   inToEm,
@@ -62,6 +68,7 @@ import {
   inToPc,
   inToCm,
   inToMm,
+  inToPercentage,
   pcToPx,
   pcToRem,
   pcToEm,
@@ -71,6 +78,7 @@ import {
   pcToIn,
   pcToCm,
   pcToMm,
+  pcToPercentage,
   cmToPx,
   cmToRem,
   cmToEm,
@@ -80,6 +88,7 @@ import {
   cmToIn,
   cmToPc,
   cmToMm,
+  cmToPercentage,
   mmToPx,
   mmToRem,
   mmToEm,
@@ -89,6 +98,17 @@ import {
   mmToIn,
   mmToPc,
   mmToCm,
+  mmToPercentage,
+  percentageToPx,
+  percentageToRem,
+  percentageToEm,
+  percentageToVw,
+  percentageToVh,
+  percentageToPt,
+  percentageToIn,
+  percentageToPc,
+  percentageToCm,
+  percentageToMm,
 } from '../src/converters';
 
 describe('pxToRem', () => {
@@ -195,6 +215,20 @@ describe('pxToMm', () => {
     expect(pxToMm(0)).toBe(0);
 
     expect(pxToMm(-3.78)).toBe(-1);
+  });
+});
+
+describe('pxToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(pxToPercentage(10, mockBase)).toBe(1);
+    expect(pxToPercentage(500, mockBase)).toBe(50);
+
+    expect(pxToPercentage(0, mockBase)).toBe(0);
+
+    expect(pxToPercentage(-10, mockBase)).toBe(-1);
+    expect(pxToPercentage(10, -mockBase)).toBe(-1);
   });
 });
 
@@ -316,6 +350,19 @@ describe('remToMm', () => {
   });
 });
 
+describe('remToPercentage', () => {
+  test('should convert correctly', () => {
+    expect(remToPercentage(1, 16, 1000)).toBe(1.6);
+    expect(remToPercentage(15, 16, 1000)).toBe(24);
+
+    expect(remToPercentage(0, 16, 1000)).toBe(0);
+
+    expect(remToPercentage(-1, 16, 1000)).toBe(-1.6);
+    expect(remToPercentage(1, -16, 1000)).toBe(-1.6);
+    expect(remToPercentage(1, 16, -1000)).toBe(-1.6);
+  });
+});
+
 describe('emToPx', () => {
   test('should convert correctly', () => {
     expect(emToPx(1)).toBe(16);
@@ -431,6 +478,19 @@ describe('emToMm', () => {
 
     expect(emToMm(-3)).toBe(-12.7);
     expect(emToMm(3, -16)).toBe(-12.7);
+  });
+});
+
+describe('emToPercentage', () => {
+  test('should convert correctly', () => {
+    expect(emToPercentage(1, 16, 1000)).toBe(1.6);
+    expect(emToPercentage(15, 16, 1000)).toBe(24);
+
+    expect(emToPercentage(0, 16, 1000)).toBe(0);
+
+    expect(emToPercentage(-1, 16, 1000)).toBe(-1.6);
+    expect(emToPercentage(1, -16, 1000)).toBe(-1.6);
+    expect(emToPercentage(1, 16, -1000)).toBe(-1.6);
   });
 });
 
@@ -556,6 +616,20 @@ describe('vwToMm', () => {
   });
 });
 
+describe('vwToPercentage', () => {
+  test('should convert correctly', () => {
+    expect(vwToPercentage(1, 1920, 1000)).toBe(1.92);
+    expect(vwToPercentage(50, 1920, 1000)).toBe(96);
+    expect(vwToPercentage(100, 1920, 1000)).toBe(192);
+
+    expect(vwToPercentage(0, 1920, 1000)).toBe(0);
+
+    expect(vwToPercentage(-1, 1920, 1000)).toBe(-1.92);
+    expect(vwToPercentage(1, -1920, 1000)).toBe(-1.92);
+    expect(vwToPercentage(1, 1920, -1000)).toBe(-1.92);
+  });
+});
+
 describe('vhToPx', () => {
   test('should convert correctly', () => {
     expect(vhToPx(1, 1000)).toBe(10);
@@ -678,6 +752,20 @@ describe('vhToMm', () => {
   });
 });
 
+describe('vhToPercentage', () => {
+  test('should convert correctly', () => {
+    expect(vhToPercentage(10, 1080, 1000)).toBe(10.8);
+    expect(vhToPercentage(125, 1080, 1000)).toBe(135);
+    expect(vhToPercentage(50, 1000, 1000)).toBe(50);
+
+    expect(vhToPercentage(0, 1080, 1000)).toBe(0);
+
+    expect(vhToPercentage(-10, 1080, 1000)).toBe(-10.8);
+    expect(vhToPercentage(10, -1080, 1000)).toBe(-10.8);
+    expect(vhToPercentage(10, 1080, -1000)).toBe(-10.8);
+  });
+});
+
 describe('ptToPx', () => {
   test('should convert correctly', () => {
     expect(ptToPx(9)).toBe(12);
@@ -782,6 +870,20 @@ describe('ptToMm', () => {
     expect(ptToMm(0)).toBe(0);
 
     expect(ptToMm(-32)).toBe(-11.289);
+  });
+});
+
+describe('ptToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(ptToPercentage(10, mockBase)).toBe(1.333);
+    expect(ptToPercentage(500, mockBase)).toBe(66.667);
+
+    expect(ptToPercentage(0, mockBase)).toBe(0);
+
+    expect(ptToPercentage(-10, mockBase)).toBe(-1.333);
+    expect(ptToPercentage(10, -mockBase)).toBe(-1.333);
   });
 });
 
@@ -894,6 +996,20 @@ describe('inToMm', () => {
   });
 });
 
+describe('inToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(inToPercentage(1, mockBase)).toBe(9.6);
+    expect(inToPercentage(12, mockBase)).toBe(115.2);
+
+    expect(inToPercentage(0, mockBase)).toBe(0);
+
+    expect(inToPercentage(-1, mockBase)).toBe(-9.6);
+    expect(inToPercentage(1, -mockBase)).toBe(-9.6);
+  });
+});
+
 describe('pcToPx', () => {
   test('should convert correctly', () => {
     expect(pcToPx(1)).toBe(16);
@@ -998,6 +1114,20 @@ describe('pcToMm', () => {
     expect(pcToMm(0)).toBe(0);
 
     expect(pcToMm(-6)).toBe(-25.4);
+  });
+});
+
+describe('pcToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(pcToPercentage(6, mockBase)).toBe(9.6);
+    expect(pcToPercentage(10, mockBase)).toBe(16);
+
+    expect(pcToPercentage(0, mockBase)).toBe(0);
+
+    expect(pcToPercentage(-6, mockBase)).toBe(-9.6);
+    expect(pcToPercentage(6, -mockBase)).toBe(-9.6);
   });
 });
 
@@ -1108,6 +1238,20 @@ describe('cmToMm', () => {
   });
 });
 
+describe('cmToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(cmToPercentage(2, mockBase)).toBe(7.559);
+    expect(cmToPercentage(4, mockBase)).toBe(15.118);
+
+    expect(cmToPercentage(0, mockBase)).toBe(0);
+
+    expect(cmToPercentage(-2, mockBase)).toBe(-7.559);
+    expect(cmToPercentage(2, -mockBase)).toBe(-7.559);
+  });
+});
+
 describe('mmToPx', () => {
   test('should convert correctly', () => {
     expect(mmToPx(1)).toBe(3.78);
@@ -1212,5 +1356,145 @@ describe('mmToCm', () => {
     expect(mmToCm(0)).toBe(0);
 
     expect(mmToCm(-2)).toBe(-0.2);
+  });
+});
+
+describe('mmToPercentage', () => {
+  const mockBase = 1000;
+
+  test('should convert correctly', () => {
+    expect(mmToPercentage(2, mockBase)).toBe(0.756);
+    expect(mmToPercentage(4, mockBase)).toBe(1.512);
+
+    expect(mmToPercentage(0, mockBase)).toBe(0);
+
+    expect(mmToPercentage(-2, mockBase)).toBe(-0.756);
+    expect(mmToPercentage(2, -mockBase)).toBe(-0.756);
+  });
+});
+
+describe('percentageToPx', () => {
+  test('should convert correctly', () => {
+    expect(percentageToPx(10, 1000)).toBe(100);
+    expect(percentageToPx(100, 1000)).toBe(1000);
+
+    expect(percentageToPx(0, 1000)).toBe(0);
+
+    expect(percentageToPx(-10, 1000)).toBe(-100);
+    expect(percentageToPx(10, -1000)).toBe(-100);
+  });
+});
+
+describe('percentageToRem', () => {
+  test('should convert correctly', () => {
+    expect(percentageToRem(10, 1000)).toBe(6.25);
+    expect(percentageToRem(100, 1000, 8)).toBe(125);
+
+    expect(percentageToRem(0, 1000)).toBe(0);
+
+    expect(percentageToRem(-10, 1000)).toBe(-6.25);
+    expect(percentageToRem(10, -1000)).toBe(-6.25);
+    expect(percentageToRem(10, 1000, -16)).toBe(-6.25);
+  });
+});
+
+describe('percentageToEm', () => {
+  test('should convert correctly', () => {
+    expect(percentageToEm(10, 1000)).toBe(6.25);
+    expect(percentageToEm(100, 1000, 8)).toBe(125);
+
+    expect(percentageToEm(0, 1000)).toBe(0);
+
+    expect(percentageToEm(-10, 1000)).toBe(-6.25);
+    expect(percentageToEm(10, -1000)).toBe(-6.25);
+    expect(percentageToEm(10, 1000, -16)).toBe(-6.25);
+  });
+});
+
+describe('percentageToVw', () => {
+  test('should convert correctly', () => {
+    expect(percentageToVw(1, 1000, 1920)).toBe(0.521);
+    expect(percentageToVw(50, 1000, 1920)).toBe(26.042);
+    expect(percentageToVw(100, 1000, 1920)).toBe(52.083);
+
+    expect(percentageToVw(0, 1000, 1920)).toBe(0);
+
+    expect(percentageToVw(-1, 1000, 1920)).toBe(-0.521);
+    expect(percentageToVw(1, -1000, 1920)).toBe(-0.521);
+    expect(percentageToVw(1, 1000, -1920)).toBe(-0.521);
+  });
+});
+
+describe('percentageToVh', () => {
+  test('should convert correctly', () => {
+    expect(percentageToVh(1, 1000, 1080)).toBe(0.926);
+    expect(percentageToVh(50, 1000, 1080)).toBe(46.296);
+    expect(percentageToVh(100, 1000, 1080)).toBe(92.593);
+
+    expect(percentageToVh(0, 1000, 1080)).toBe(0);
+
+    expect(percentageToVh(-1, 1000, 1080)).toBe(-0.926);
+    expect(percentageToVh(1, -1000, 1080)).toBe(-0.926);
+    expect(percentageToVh(1, 1000, -1080)).toBe(-0.926);
+  });
+});
+
+describe('percentageToPt', () => {
+  test('should convert correctly', () => {
+    expect(percentageToPt(10, 1000)).toBe(75);
+    expect(percentageToPt(50, 1000)).toBe(375);
+
+    expect(percentageToPt(0, 1000)).toBe(0);
+
+    expect(percentageToPt(-10, 1000)).toBe(-75);
+    expect(percentageToPt(10, -1000)).toBe(-75);
+  });
+});
+
+describe('percentageToIn', () => {
+  test('should convert correctly', () => {
+    expect(percentageToIn(10, 1000)).toBe(1.042);
+    expect(percentageToIn(50, 1000)).toBe(5.208);
+
+    expect(percentageToIn(0, 1000)).toBe(0);
+
+    expect(percentageToIn(-10, 1000)).toBe(-1.042);
+    expect(percentageToIn(10, -1000)).toBe(-1.042);
+  });
+});
+
+describe('percentageToPc', () => {
+  test('should convert correctly', () => {
+    expect(percentageToPc(10, 1000)).toBe(6.25);
+    expect(percentageToPc(50, 1000)).toBe(31.25);
+
+    expect(percentageToPc(0, 1000)).toBe(0);
+
+    expect(percentageToPc(-10, 1000)).toBe(-6.25);
+    expect(percentageToPc(10, -1000)).toBe(-6.25);
+  });
+});
+
+describe('percentageToCm', () => {
+  test('should convert correctly', () => {
+    expect(percentageToCm(10, 1000)).toBe(2.646);
+    expect(percentageToCm(50, 1000)).toBe(13.229);
+
+    expect(percentageToCm(0, 1000)).toBe(0);
+
+    expect(percentageToCm(-10, 1000)).toBe(-2.646);
+    expect(percentageToCm(10, -1000)).toBe(-2.646);
+  });
+});
+
+describe('percentageToMm', () => {
+  test('should convert correctly', () => {
+    expect(percentageToMm(10, 1000)).toBe(26.458);
+    expect(percentageToMm(50, 1000)).toBe(132.292);
+
+    expect(percentageToMm(0, 1000)).toBe(0);
+
+    expect(percentageToMm(-10, 1000)).toBe(-26.458);
+    expect(percentageToMm(10, -1000)).toBe(-26.458);
   });
 });

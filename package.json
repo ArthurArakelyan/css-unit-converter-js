@@ -1,6 +1,6 @@
 {
   "name": "css-unit-converter-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Converts all common CSS units",
   "private": false,
   "main": "dist/index.js",
